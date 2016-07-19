@@ -1,0 +1,29 @@
+<div ng-controller="NavbarController">
+	<div class="header">
+		<div ng-show="nav.isCollapsed" ng-click="nav.isCollapsed = !nav.isCollapsed" class="equalHWrap eqWrap">
+			<span class="equalHW eq">Heirloam</span>
+		</div>
+
+		<div ng-hide="nav.isCollapsed" class="equalHW eq">
+			<p>Hello {{ nav.getCurrentUser().name }}</p> 
+		</div>
+		<div ng-hide="nav.isCollapsed">
+
+			<div ng-click="nav.isCollapsed = !nav.isCollapsed" ng-repeat="item in nav.menu" ui-sref-active="active" ui-sref="{{item.state}}" class="equalHW eq">
+				{{item.title}}
+			</div>
+
+			<div ng-hide="nav.isLoggedIn()" ui-sref-active="active" class="equalHW eq">
+				<a ui-sref="signup">Sign up</a>
+			</div>
+			<div ng-hide="nav.isLoggedIn()" ui-sref-active="active" class="equalHW eq">
+				<a ui-sref="login">Login</a>
+			</div>
+			<div ng-show="nav.isLoggedIn()" class="equalHW eq">
+				<a ui-sref="logout">Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<br>
+<br>

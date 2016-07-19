@@ -1,0 +1,10 @@
+#uploadDiv {
+	@include border-shadow($primary-button-shadow);
+	background: $primary-button;
+	min-height: 400px;
+}
+
+#uploadDiv:hover {
+	@include border-shadow($primary-button-active-shadow);
+	background: $primary-button-active;
+}
